@@ -3,6 +3,9 @@ library(ggplot2)
 library(gridExtra)
 library(ggthemes)
 
+# the full data set
+pirates.df <- read.csv("pirates.csv", stringsAsFactors=FALSE)
+
 # I extracted the year column (I made a year column) and vessel type column
 # then did a ton of text maniuplation to get the final set of factors. It's
 # a pretty messy column and ended up lumping more than I liked into "Other"
@@ -25,8 +28,6 @@ library(ggthemes)
 p2.df <- read.csv("p2.csv", stringsAsFactors=FALSE)
 # aggregated by year & vessel.type
 p3.df <- read.csv("p3.csv", stringsAsFactors=FALSE)
-# the full data set
-pirates.df <- read.csv("pirates.csv", stringsAsFactors=FALSE)
 
 # simple bar graph of totals
 p <- ggplot(pirates.df, aes(x=year))
